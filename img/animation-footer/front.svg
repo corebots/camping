@@ -1,0 +1,16 @@
+<svg width="5065" height="856" viewBox="0 0 5065 856" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="front">
+<path id="mountains-front-shadows" d="M541 402.5L971 506L1162 402.5L1771.5 482.5L2543.5 359L2703 454.5L2858 402.5L3021.5 482.5L3073 359L3380.4 454.5L3714.5 402.5L4200.9 482.5L4455 434.5L5064 506L4916.5 570L4455 434.5L4200.9 482.5L4076.5 506L3714.5 402.5L3380.4 454.5L3200.5 482.5L3073 359L3021.5 482.5L2902 570L2858 402.5L2703 454.5L2599.5 482.5L2543.5 359L1771.5 482.5L1656 625.5L1162 402.5L971 506L827.5 542L541 402.5Z" fill="url(#paint0_linear)"/>
+<path id="mountains-front" d="M541.5 402.5C366.333 458.333 12.8 574 0 590V856H5064.5V506L4917 570L4455.5 434.5L4201.4 482.5L4077 506L3715 402.5L3380.9 454.5L3201 482.5L3073.5 359L3022 482.5L2902.5 570L2858.5 402.5L2703.5 454.5L2600 482.5L2544 359L1772 482.5L1656.5 625.5L1162.5 402.5L971.5 506L828 542L541.5 402.5Z" fill="url(#paint1_linear)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear" x1="2802.5" y1="359" x2="2803" y2="723" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B0ADAD"/>
+<stop offset="1" stop-color="#C4C4C4" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x1="2532.25" y1="359" x2="2532.5" y2="709.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E8E7E7"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,167 @@
+/**
+ * Calendar toolbar
+ */
+
+.availability-calendar-toolbar {
+	padding-bottom: 18px;
+	border-radius: 8px 8px 0 0;
+	font-size: 1em;
+	//font-weight: bold;
+	background-color: #4D4D4D; 
+	min-height: 56px;
+}
+
+@media (min-width: 400px) {  
+  .availability-calendar-toolbar  {
+	border-radius: 0 0 0 0;
+  }  
+}
+
+@media (min-width: 768px) {  
+  .availability-calendar-toolbar  {
+	border-radius: 8px 8px 0 0;
+  	}  
+}
+
+.availability-calendar-toolbar span:last-child {float: right}
+
+.availability-calendar-toolbar input {
+
+	padding: 8px 14px;
+	border: none;
+
+	cursor: pointer;
+	outline: 0;
+}
+
+.availability-calendar-toolbar input:first-child {
+	margin-right: 8px;
+	padding: 8px 14px;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	margin-top: 9px;
+	background: #fff;
+	color: #4D4D4D;
+	transition: .3s;
+	transform: scale(1) translateY(0px) !important;
+}
+
+.availability-calendar-toolbar input:nth-child(2) {
+	border-radius: 4px 0 0 4px;
+  	transform: translateY(-1px);
+  	background: #4D4D4D; 
+  	color: white;
+  	//transition: .3s;
+}
+
+.availability-calendar-toolbar input:last-child {
+	margin-left: -1px;
+	border-radius: 0 4px 4px 0;
+	margin-right: 8px;
+	transform: translateY(-1px); 
+	background: #4D4D4D;
+	color: white;
+	//transition: .3s;
+
+}
+
+.availability-calendar-toolbar input:hover {
+	//background: white;
+	//color: #4D4D4D;
+
+  	transform: scale(1.2) translateY(-2px);
+	//transition: .3s;
+
+
+}
+
+.availability-calendar-toolbar input:active {
+	//background: white;
+	//color: #4D4D4D;
+	transition: .3s;
+}
+
+
+/**
+ * Calendar table and cells
+ */
+.availability-calendar {
+	width: 100%;
+	background: #fff;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+
+/* 
+ * truncating weekdays in cal header
+ */
+
+.availability-calendar th {
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+
+.availability-calendar th, .availability-calendar td {
+	border: 1px solid #DDD;
+	padding: 5px;
+}
+
+.availability-calendar td {
+	height: 103px;
+	vertical-align: top;
+	text-align: right;
+	transition: .3s;
+}
+
+.availability-calendar .ex-month {opacity: 0.4}
+.availability-calendar .unavailable {position: relative}
+
+.availability-calendar .unavailable div {
+	position: absolute;
+	top: 40%;
+	left: 0;
+	right: -1px;
+	height: 30px;
+	background: #F88; //FAB95C
+}
+
+/*
+	red availability bar
+ */
+.availability-calendar .unavailable:last-child div {right: 0}
+
+.availability-calendar .unavailable .first {
+	left: 51%;
+	border-radius: 8px 0 0 8px;
+}
+
+.availability-calendar .unavailable .last {
+	right: 51%;
+	border-radius: 0 8px 8px 0;
+}
+
+#monthindicator {
+	padding-left: 14px;
+    vertical-align: bottom;
+ 	position: relative; 
+ 	top:7px;
+	font-size: 1.6em;
+	color: #fff;
+}
+
+@media (min-width: 544px) {  
+  #monthindicator {
+  	font-size:1rem;
+  	top:16px;
+
+  	}  
+}
+
+@media (min-width: 768px) {  
+  #monthindicator {
+  	font-size:1.6rem;
+  	top:7px;
+
+  	}  
+}

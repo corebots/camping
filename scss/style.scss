@@ -1,0 +1,1273 @@
+////////////////////////////////////////////////////////////////////////////////////////
+// COLORS //////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+$--green: #313C23;
+$--green-soft: #828756;
+$--neutral: #96AF9F;
+$--blue: #6E92A4;
+$--white: #DDE4E2;
+$--mainone:gray;
+$--attention: darken($--mainone, 20%);
+$--highlight: orange;
+
+////////////////////////////////////////////////////////////////////////////////////////
+// CONTENT /////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+* { 
+  font-family: Inter; 
+  color: gray;
+}
+
+body, html {
+  height: 100%;  
+}
+
+h1 {
+  font-weight: 800 ;
+  color: darken($--mainone, 80%);
+  opacity: .1;
+}
+
+@media (min-width: 544px) {  
+  h1 {font-size:4rem;} /*1rem = 16px*/
+}
+
+@media (min-width: 768px) {  
+  h1 {font-size:5rem;} /*1rem = 16px*/
+}
+
+@media (min-width: 992px) { 
+  h1 {font-size:6rem;} /*1rem = 16px*/
+}
+
+@media (min-width: 1200px) {  
+  h1 {font-size:8rem;} /*1rem = 16px*/    
+}
+
+@media (min-width: 1600px) {  
+  h1 {font-size:10rem;} /*1rem = 16px*/    
+}
+
+h2 {
+  color: darken($--mainone, 20%);
+}
+
+div.container-fluid {
+  padding: 0px;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+// NAVBAR //////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+.navbar-nav a:visited {
+  color: $--attention;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+
+  li {
+    font-weight: 600;
+    border-radius: 20px;
+    transition: .3s;
+    min-height: 32px;
+    &:hover {
+      // -webkit-box-shadow:inset 0px 0px 0px 2px $--mainone;
+      // -moz-box-shadow:inset 0px 0px 0px 2px $--mainone;
+      // box-shadow:inset 0px 0px 0px 2px $--mainone;
+      transition: .3s;
+    }
+  }
+}
+
+.nav-item * {
+  fill: $--attention;
+
+  &:hover *{
+    fill: lighten($--mainone, 20%);
+    transition: .3s;
+  }
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+    color: lighten($--mainone, 20%);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $--attention;
+
+  &:hover {
+    color: lighten($--mainone, 20%);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+// JUMBOTRON ///////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+.jumbotron {
+  background: none;
+  border-radius: 0px;
+  //position: absolute;
+  margin-top: -50vh;
+  //height: 100%; 
+  width: 100%; 
+}
+
+#header-image { 
+  // The image used 
+  background-image: url("https://corebots.github.io/camping/img/img-header/header-home.jpg");
+  transition: 0.3s;
+  height: 100%; 
+  width: 100%;
+  margin-top: -72px;
+  position: relative;
+  // Center and scale the image nicely 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  -webkit-box-shadow: 0px -9px 8px 0px  lighten($--mainone, 40%);
+  -moz-box-shadow: 0px -9px 8px 0px  lighten($--mainone, 40%);
+  box-shadow: 0px -9px 8px 0px  lighten($--mainone, 40%);
+}
+
+// Add bottom fade to header image
+#header-image::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:400px;
+  bottom: 0;
+  background: linear-gradient(to bottom,  rgba(255,255,255,0), #fff 100%), linear-gradient(to bottom,  rgba(255,255,255,0), white 100%);
+  opacity: 1;
+}
+
+.btn {
+  border: none;
+  background-color: darken($--mainone, 30%);
+  color: lighten($--mainone, 40%);
+
+  &:hover {
+    -webkit-box-shadow: 0px 0px 25px 0px lighten($--mainone, 30%);
+    -moz-box-shadow: 0px 0px 25px 0px lighten($--mainone, 30%);
+    box-shadow: 0px 0px 25px 0px lighten($--mainone, 30%);
+    background-color: $--highlight;
+    border: none;
+    color: #fff;
+  }
+}
+
+
+#jumbotron_separ {
+  width: 38%;
+  height: 4px;   
+  background-color: darken($--mainone, 20%);
+}
+
+#maincontent {
+  overflow-x: hidden;
+ background-color: transparent;
+}
+
+.shadow-to-menu {
+  -webkit-box-shadow: 0px -9px 8px 0px  lighten($--mainone, 40%);
+  -moz-box-shadow: 0px -9px 8px 0px  lighten($--mainone, 40%);
+  box-shadow: 0px -9px 8px 0px  lighten($--mainone, 40%);
+}
+
+.separ {
+  width: 10%;
+  height: 4px;
+  background-color: darken($--mainone, 20%);
+  margin-bottom: 2rem;
+}
+
+#facts path {
+  fill: darken($--mainone, 20%);
+}
+
+.fact {
+  border-radius: 8px;
+  transition: .6s;
+
+  .btn {
+    opacity: 0;
+    transition: .4s;
+  }
+
+  &:hover {
+    transition: .3s;
+    -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+    -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+    box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+   
+    .btn {
+      opacity: 1;
+      transition: .4s;
+    }
+  }
+}
+
+
+.map-interactive {
+  overflow: hidden;
+  margin-top: 0rem;
+  margin-bottom: -4rem;
+  z-index: -1000;
+  min-width: 800px; 
+  // breaks popups, use media queries below instead
+  // margin-left: 50%;
+  // transform: translateX(-51%);
+  li {
+      list-style-type: none;
+  }
+}
+
+@media (min-width: 400px) {  
+  .map-interactive {
+      margin-left: -30vw; 
+  }
+}
+
+@media (min-width: 600px) {  
+  .map-interactive {  
+      margin-left: -20vw; 
+  }
+}
+
+@media (min-width: 700px) {  
+  .map-interactive {    
+      margin-left: 0px; 
+  }
+}
+
+.card {
+  transition: .6s;
+  background-color: transparent;
+
+  div {
+        overflow: hidden;
+  }
+
+  img {
+    transition: 5s;
+  }
+
+  &:hover {
+    border-radius: 8px;
+    transition: .3s;
+    -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+    -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+    box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+
+    img {
+      opacity: .75;
+      transition: 13s linear;
+      transform: scale(1.45);  }
+  }
+}
+
+.roundzoom:hover {
+  border-radius: 8px;
+  transition: .2s;
+}
+
+#aboutcamp {
+  z-index:1;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+// INTERACTIVE SVG MAP /////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+// #Vector_33 {
+//   transition: .3s;
+// }
+
+// #Vector_33:hover {
+//   -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+//   -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+//   box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+// }
+
+#reception {
+  display: block;
+
+  rect {
+    stroke-width: 0;
+    stroke: $--attention;
+    transition: .4s ease;
+  }
+
+  path {
+    transition: .4s ease;
+  }
+
+  &:hover {
+    rect {
+      //stroke-width: 3;
+      fill: $--attention;
+      stroke: $--attention;
+      transition: .4s ease; 
+    }
+
+    path {
+      fill: lighten($--mainone, 40%);
+      transition: .4s ease;
+    }
+  } 
+}
+
+#group_WC_solo {
+  display: block;
+
+  rect {
+    stroke-width: 0;
+    stroke: $--attention;
+    transition: .4s ease;
+  }
+
+  path {
+    transition: .4s ease;
+  }
+
+  &:hover {
+
+    rect {
+      //stroke-width: 3;
+      fill: $--attention;
+      transition: .4s ease; 
+    }
+
+    path {
+      fill: lighten($--mainone, 40%);
+      transition: .4s ease;
+    }
+  }
+}
+
+#group_caravans {
+  display: block;
+
+  rect {
+    stroke-width: 0;
+    stroke: $--attention;
+    transition: .4s ease;
+  }
+
+  path {
+    transition: .4s ease;
+  }
+  &:hover {
+
+    rect {
+      //stroke-width: 3;
+      fill: $--attention;
+      stroke: $--attention;
+      transition: .4s ease; 
+    }
+
+      path {
+      fill: lighten($--mainone, 40%);
+      transition: .4s ease;
+    }
+  }
+}
+
+#group_tents {
+  display: block;
+  rect {
+    stroke-width: 0;
+    stroke: $--attention;
+    transition: .4s ease;
+  }
+
+  path {
+    transition: .4s ease;
+  }
+
+  &:hover {
+
+    rect {
+      //stroke-width: 3;
+      fill: $--attention;
+      stroke: $--attention;
+      transition: .4s ease; 
+    }
+
+    path {
+      fill: lighten($--mainone, 40%);
+      transition: .4s ease;    
+    }
+  }
+}
+
+.popups {
+  width: 400px;
+  font-size: 0.85rem;
+  background-color: #fff;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: height 0ms 400ms, opacity 400ms 0ms;
+  -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+}
+ 
+.popups.visible {
+  opacity: 1;
+  height: 300px;
+  transition: height 0ms 0ms, opacity 600ms 0ms;
+  -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+}
+
+
+
+// @media (min-width: 768px) {  
+//   .popups {width: 400px;}  
+// }
+
+////////////////////////////////////////////////////////////////////////////////////////
+// CALENDAR ACTIONS ///////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+.actions {
+  width: 30px;
+  //font-family: Arial, sans-serif;
+  //font-size: 11pt;
+  background-color: transparent;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  height: 0;
+  transition: height 0ms 400ms, opacity 400ms 0ms;
+  // -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  // -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  // box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+}
+ 
+.actions.visible {
+ z-index: 10;
+  opacity: 1;
+  height: 100px;
+  pointer-events: none; 
+  transition: height 0ms 0ms, opacity 600ms 0ms;
+  // -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  // -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  // box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+  // 
+  i {
+    pointer-events: auto;
+  }
+}
+
+
+
+.added {
+  color:#fff;
+}
+
+#action-phone {
+  transform: scale(0.70);
+  &:hover {
+    transform: scale(0.85);
+  }
+}
+ 
+#action-mail {
+  transform: scale(0.7);
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+ 
+////////////////////////////////////////////////////////////////////////////////////////
+// ANIMATION FOR POPUPS (fade in the popup) ////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+@-webkit-keyframes fadeOut {
+  from {opacity: 1;} 
+  to {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1;}
+  to {opacity:0 ;}
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+// GALLERY AND IMAGE OVERLAY ///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gal {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li img {
+    transition: opacity .3s ease-in-out;
+    &:hover {
+      opacity:.72;
+      transition: opacity 600ms 0ms;
+      -webkit-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+      -moz-box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+      box-shadow: 0px 0px 25px 0px  lighten($--mainone, 30%);
+    }
+  }
+}
+ 
+#imgview-overlay {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transition: opacity .3s ease-in;
+  cursor: url("https://corebots.github.io/camping/img/icon/closeoverlaycursor.png"), auto;
+  z-index: 102;
+}
+
+#imgview-overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+   z-index: 102;
+}
+
+#imgview-image {
+  max-height: 85%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 85%;
+  //background: transparent url("https://corebots.github.io/camping/img/loadergif.gif") 50% 50% no-repeat;
+  text-indent: -9999px;
+  cursor: url("https://corebots.github.io/camping/img/icon/closeoverlaycursor.png"), auto;
+}
+
+#imgview-desc {
+  color: #fff;
+  max-width: 85%;
+  cursor: url("https://corebots.github.io/camping/img/icon/closeoverlaycursor.png"), auto;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+// FOOTER //////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+footer {
+  z-index: -500;
+  
+  div {
+    font-size: 14px;
+    color: darken($--mainone, 10%);
+    // background-color: gray; 
+    line-height: 2rem;      
+    z-index: 1;
+  }
+
+  a:hover {
+    color: lighten($--mainone, 10%) !important;
+  }
+
+  a:visited {
+    color: darken($--mainone, 10%);
+  }
+
+  ul {
+    padding-left: 0px;
+    list-style-type: none;
+  }
+}
+
+strong {
+  font-weight: 600;
+}
+
+.footer-links {
+  color: lighten($--mainone, 20%);
+
+  a {
+      color: lighten($--mainone, 20%);
+  }
+
+  a:visited {
+      color: lighten($--mainone, 20%);
+  }
+}
+
+.page-footer {
+  top: 30vh;
+  text-overflow: clip;
+  // overflow: hidden;
+  white-space: nowrap;
+
+  a:hover {  
+    text-decoration: none;
+  }
+}
+
+.copyright a:visited {
+  color: lighten($--mainone, 40%);
+}
+// ICONS SOCIAL RIGHT
+.pull-right {
+  float: right;
+}
+
+#addr-content  {
+
+  a  {
+  color: $--highlight;
+}
+}
+
+#footer-anime {
+  padding-top: 1rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+}
+
+#footer-weather
+  
+ p{
+  line-height: 1;
+  margin-bottom: 30vh;
+
+  padding-bottom: -64px;
+  font-weight: 300;
+  font-size: 4rem;
+  color: lighten($--mainone, 30%);
+  z-index: 10;
+  #ctime {
+    color: lighten($--mainone, 30%);
+  }
+
+}
+
+// @media (min-width: 400px) {  
+//   #footer-weather p {font-size:2rem;}  
+// }
+
+// @media (min-width: 768px) {  
+//   #footer-weather p {font-size:4rem;}  
+// }
+
+
+
+@media (min-width: 300px) {  
+  #footer-weather p {
+    font-size: 2rem;
+  }  
+}
+
+@media (min-width: 581px) {  
+  #footer-weather p {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 581px) {  
+  #footer-weather p {
+    font-size: 2.5rem;
+  }  
+}
+
+@media (min-width: 801px) {  
+  #footer-weather p {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 801px) {  
+  #footer-weather p {
+    font-size: 4rem;
+  }  
+}
+
+#footer-sun {
+  position: absolute;
+  z-index: -1;
+}
+ 
+#sun {
+  max-width: 300px;
+}
+
+// Add bottom sunset to footer
+#footer-sunset {
+  position: absolute;
+  margin: 0;
+  height: 30%;
+  width: 100%;
+  bottom: calc(16vh + 150px);
+  background: linear-gradient(to bottom,  rgba(255,255,255,0), lighten($--highlight, 40%) 100%), linear-gradient(to bottom,  rgba(255,255,255,0), white 100%);
+  // margin: 0;
+  text-align: center;
+  min-height: 230px;
+  box-sizing: border-box;
+  z-index: -500;
+}
+
+#footer-rear {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  bottom: calc(15vh + 150px);
+  background: url("https://corebots.github.io/camping/img/animation-footer/rear-opt.png");
+  text-align: center;
+  min-height: 230px;
+  box-sizing: border-box;
+  -webkit-animation: slide-footer-rear 50s linear infinite;
+}
+
+#footer-front {
+  position: absolute;
+  width: 100%;
+  bottom: calc(12vh + 180px);
+  background: url("https://corebots.github.io/camping/img/animation-footer/front-opt.png");
+  margin: 0;
+  text-align: center;
+  min-height: 230px;
+  box-sizing: border-box;
+  -webkit-animation: slide-footer-front 20s linear infinite;
+}
+
+#footer-trees {
+  position: absolute;
+  width: 100%;
+  bottom: calc(7vh + 180px);
+  background: url("https://corebots.github.io/camping/img/animation-footer/trees-mountains-front-opt.png");
+  margin: 0;
+  text-align: center;
+  min-height: 230px;
+  box-sizing: border-box;
+  -webkit-animation: slide-footer-front 15s linear infinite;
+}
+
+#footer-ground {
+  position: absolute;
+z-index: 30;
+  width: 100%;
+  bottom: 220px;
+  background: url("https://corebots.github.io/camping/img/animation-footer/front-ground.png");
+  margin: 0;
+  text-align: center;
+  min-height: 230px;
+  box-sizing: border-box;
+  -webkit-animation: slide-footer-front 5s linear infinite;
+}
+
+@-webkit-keyframes slide-footer-rear {
+    from { 
+      background-position: 0 0; 
+    }
+    to { 
+      background-position: -1766px 0; 
+    }
+}
+
+@-webkit-keyframes slide-footer-front {
+    from { 
+      background-position: 0 0; 
+    }
+    to { 
+      background-position: -1361px 0; 
+    }
+}
+
+@-webkit-keyframes slide-footer-trees {
+    from { 
+      background-position: 0 0; 
+    }
+    to { 
+      background-position: -1361px 0; 
+    }
+}
+
+#footer-car-combo {
+  left: 18%;
+  position:absolute;
+  z-index: 30; 
+  bottom: 240px;
+  width: 242px;
+  height: 62px;
+  background: url('https://corebots.github.io/camping/img/animation-footer/animation-car-combo-strip-new.png') left center;
+  animation: play-car-combo .8s steps(27) infinite, play-car-combo-acceleration 20s infinite;
+}
+
+@keyframes play-car-combo {
+   100% { 
+    background-position: -6534px; 
+   }
+}
+
+@keyframes play-car-combo-acceleration {
+   33% { 
+    left: 13%; 
+  }
+   66% { 
+    left: 22%; 
+  }
+   100% { 
+    left: 18%; 
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+// WEATHER BAR ADN NIGHT SWITCH TBD //////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+#footer-bar{
+  z-index: 50;
+
+  #footer-bottom-toggler {
+    text-transform: uppercase;
+    margin-top: 4vh;
+    background-color: lighten($--mainone, 30%);
+    border-radius: 8px;
+    vertical-align: middle;
+ 
+    #toggler {
+      font-size: .65rem;
+    }
+
+    a {
+      font-weight: 500;
+      color: #fff;
+    }
+
+    switch-ui {
+      z-index: 5;
+      -webkit-transition: opacity 750ms ease 750ms;
+      transition: opacity 750ms ease 750ms;
+
+      input {
+        display: none;
+      }
+
+      label {
+        color: lighten($--mainone, 10%);
+        cursor: pointer;
+        font-size: .6rem;
+        font-weight: 400;
+        letter-spacing: 2.25px;
+        padding-right: 3.125rem;
+        position: relative;
+        -webkit-transition: color 1.5s ease;
+        transition: color 1.5s ease;
+
+        span {
+          display: inline-block!important;
+          line-height: 10px!important;
+          position: relative;
+          top: 2px;
+        }
+
+        span::before {
+          content: "Night";
+          display: table;
+        }
+
+      }
+
+      label::before {
+        background-color: lighten($--mainone, 10%);
+        content: "";
+        border-radius: .625rem;
+        height: .938rem;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: background-color 1.5s ease;
+        transition: background-color 1.5s ease;
+        width: 2.5rem;
+      }
+
+      label::after {
+        background-color: #fff;
+        -webkit-box-shadow: 0 0 0.438rem 0 rgba(0,0,0,.1);
+        box-shadow: 0 0 0.438rem 0 rgba(0,0,0,.1);
+        content: "";
+        border-radius: 50%;
+        height: 1.188rem;
+        position: absolute;
+        right: 1.438rem;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: right 350ms ease, background-color 1.5s ease;
+        transition: right 350ms ease, background-color 1.5s ease;
+        width: 1.188rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 300px) {  
+  .page-footer h4, h5 {
+    font-size: 1rem;
+  }  
+}
+
+@media (min-width: 581px) {  
+  .page-footer h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 581px) {  
+  .page-footer h5 {
+    font-size: 1.5rem;
+  }  
+}
+
+@media (min-width: 801px) {  
+  .page-footer h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 801px) {  
+  .page-footer h5 {
+    font-size: 2rem;
+  }  
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+// MODALS //////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+.bg-modal {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  //display: none;
+  opacity: 0;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 40;
+  transition: .3s;
+
+  // INPUT FIELDS
+  input[type=text], [type=date], [type=number] {
+    outline-color: $--highlight;
+    border: 0px solid lighten($--mainone, 20%);
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 2px 10px 0px lighten($--mainone, 35%);
+    -moz-box-shadow: 0px 2px 10px 0px lighten($--mainone, 35%);
+    box-shadow: 0px 2px 10px 0px lighten($--mainone, 35%);
+  }
+
+  // INPUT CONTAINER FOR CHECKMARKS AND RADIOBUTS
+  .input_container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-right: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ 
+  }
+
+  // MODAL HIDE ORIGINALS
+  input[type=checkbox], [type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  // NEW CHECKBOX
+  .checkmark {
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: lighten($--mainone, 30%);
+
+    &:hover {
+      background-color: lighten($--mainone, 10%); 
+    }
+  }
+  
+  // NEW RADIO
+  .checkmaradio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: lighten($--mainone, 30%);
+    border-radius: 50%;
+
+    &:hover {
+      background-color: lighten($--mainone, 10%);
+    }
+  }
+                                          
+  .input_container input:checked ~ .checkmark {
+    background-color: $--highlight;
+  }
+
+  .input_container input:checked ~ .checkmaradio {
+    background-color: $--highlight;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .checkmaradio:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .input_container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .container input:checked ~ .checkmaradio:after {
+    display: block;
+  }
+
+  .input_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 8px;
+    height: 13px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .container .checkmaradio:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+  }
+ 
+}
+
+.bg-modal.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition: .3s;
+}
+
+.content-modal {
+  overflow-y: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  border-radius: 8px;
+  transition: .3s;
+  -webkit-box-shadow: 0px 0px 25px 0px lighten($--mainone, 30%);
+  -moz-box-shadow: 0px 0px 25px 0px lighten($--mainone, 30%);
+  box-shadow: 0px 0px 25px 0px lighten($--mainone, 30%);
+  span {
+    white-space: nowrap;
+  }
+  img {
+    margin-top: -8px;
+  }
+}
+
+.close {
+  position: absolute;
+  top:  0px;
+  right: 10px;
+  font-size: 42px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  &:hover {
+    color: lighten($--mainone, 20%);
+  }
+}
+
+.rounded {
+  border-radius: 8px !important;
+}
+
+@media (min-height: 400px) {  
+  .content-modal {
+    height: 100%;
+    border-radius: 0px;
+  }
+}
+
+@media (min-height: 900px) {  
+  .content-modal {
+    height: 860px;
+    border-radius: 8px;
+  }  
+}
+
+@media (min-width: 400px) {  
+  .make-space {
+      transform: rotate( 0deg); 
+      margin-top: 0px;
+      margin-right: 0px
+  }
+}
+ 
+@media (min-width: 768px) {  
+  .make-space {
+      transform: rotate(90deg); 
+      margin-top: 50px;
+      margin-right: -50px
+  }
+}
+
+@media (min-width: 990px) {  
+  .make-space {
+      transform: rotate(0deg); 
+      margin-top:  0px;
+      margin-right: 0px
+
+  }
+}
+#gmap {
+  border-radius: 8px;
+  -webkit-filter: grayscale(100%);
+     -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+       -o-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+#content-body-inner {
+  border-radius: 8px;
+  background-color: #EBEBEB; // GMAP INITIAL BG COLOR
+}
+
+.table-container {
+  border-radius: 8px;
+  background-color: #EBEBEB; // GMAP INITIAL BG COLOR
+}
+
+.borderless td, .borderless th {
+    border: none;
+}
+
+.btn-primary:focus,
+.btn-primary:active{
+    box-shadow:none !important;
+    outline:0px !important;
+    color: gray;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+// FADEINS /////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////
+
+@keyframes fade-in-down {
+    from {
+      opacity: 0;  
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+      opacity: 0;  
+      transform: translateY(200px);
+
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.fade-in-jumbo {
+  animation: fade-in-down 1.2s ease-out;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in-stuff {
+  animation: fade-in-up 1.2s ease-out;
+}
+
+// TABLE RESPONSIVE
+.table-regular th, td {
+  font-size: 1rem;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+}
+
+@media (min-width: 300px) {  
+  .table-regular th, td {
+  font-size: 0.85em;
+  }
+}
+ 
+@media (min-width: 768px) {  
+  .table-regular th, td {
+  font-size: 1rem;
+  }
+}
